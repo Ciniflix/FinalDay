@@ -9,6 +9,7 @@ GET     /Mens                           controllers.HomeController.Mens
 GET     /contactUs                           controllers.HomeController.contactUs
 GET     /Kids                         controllers.HomeController.Kids
 GET     /Womens                           controllers.HomeController.Womens
+GET     /products                         controllers.HomeController.products
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

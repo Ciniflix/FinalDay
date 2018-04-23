@@ -1,8 +1,8 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/ITPROJECT-master/conf/evolutions,/home/wdd/webapps/ITPROJECT-master/target/scala-2.12/classes/evolutions)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/ITPROJECT-master/conf/application.conf,/home/wdd/webapps/ITPROJECT-master/target/scala-2.12/classes/application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/ITPROJECT-master/conf/logback.xml,/home/wdd/webapps/ITPROJECT-master/target/scala-2.12/classes/logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/ITPROJECT-master/conf/routes,/home/wdd/webapps/ITPROJECT-master/target/scala-2.12/classes/routes)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/ITPROJECT-master/conf/evolutions/default,/home/wdd/webapps/ITPROJECT-master/target/scala-2.12/classes/evolutions/default)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/ITPROJECT-master/conf/evolutions/default/2.sql,/home/wdd/webapps/ITPROJECT-master/target/scala-2.12/classes/evolutions/default/2.sql)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/ITPROJECT-master/conf/evolutions/default/1.sql,/home/wdd/webapps/ITPROJECT-master/target/scala-2.12/classes/evolutions/default/1.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/FinalDay/conf/evolutions,/home/wdd/webapps/FinalDay/target/scala-2.12/classes/evolutions)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/FinalDay/conf/application.conf,/home/wdd/webapps/FinalDay/target/scala-2.12/classes/application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/FinalDay/conf/logback.xml,/home/wdd/webapps/FinalDay/target/scala-2.12/classes/logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/FinalDay/conf/routes,/home/wdd/webapps/FinalDay/target/scala-2.12/classes/routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/FinalDay/conf/evolutions/default,/home/wdd/webapps/FinalDay/target/scala-2.12/classes/evolutions/default)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/FinalDay/conf/evolutions/default/2.sql,/home/wdd/webapps/FinalDay/target/scala-2.12/classes/evolutions/default/2.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/wdd/webapps/FinalDay/conf/evolutions/default/1.sql,/home/wdd/webapps/FinalDay/target/scala-2.12/classes/evolutions/default/1.sql)[0m

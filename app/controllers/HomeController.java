@@ -64,6 +64,12 @@ public class HomeController extends Controller {
     public Result Womens() {
         return ok(views.html.Womens.render());
     }
+    public Result products() {
+
+        List<Product> productsList = Product.find.all();
+
+        return ok(products.render(productsList));
+    }
     public Result addProduct() {
 
         // Create a form by wrapping the Product class

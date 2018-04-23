@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/wdd/webapps/ITPROJECT-master/conf/routes
-// @DATE:Mon Apr 23 10:11:35 IST 2018
+// @SOURCE:/home/wdd/webapps/FinalDay/conf/routes
+// @DATE:Mon Apr 23 11:01:48 IST 2018
 
 package router
 
@@ -46,7 +46,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """contactUs""", """controllers.HomeController.contactUs"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """Kids""", """controllers.HomeController.Kids"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """Womens""", """controllers.HomeController.Womens"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """Products""", """controllers.HomeController.Products"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """products""", """controllers.HomeController.products"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addproduct""", """controllers.HomeController.addProduct"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addproduct""", """controllers.HomeController.addProductSubmit"""),
@@ -166,18 +166,18 @@ class Routes(
   )
 
   // @LINE:12
-  private[this] lazy val controllers_HomeController_Products6_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("Products")))
+  private[this] lazy val controllers_HomeController_products6_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("products")))
   )
-  private[this] lazy val controllers_HomeController_Products6_invoker = createInvoker(
-    HomeController_0.Products,
+  private[this] lazy val controllers_HomeController_products6_invoker = createInvoker(
+    HomeController_0.products,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "Products",
+      "products",
       Nil,
       "GET",
-      this.prefix + """Products""",
+      this.prefix + """products""",
       """""",
       Seq()
     )
@@ -277,9 +277,9 @@ class Routes(
       }
   
     // @LINE:12
-    case controllers_HomeController_Products6_route(params@_) =>
+    case controllers_HomeController_products6_route(params@_) =>
       call { 
-        controllers_HomeController_Products6_invoker.call(HomeController_0.Products)
+        controllers_HomeController_products6_invoker.call(HomeController_0.products)
       }
   
     // @LINE:15

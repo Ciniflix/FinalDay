@@ -30,7 +30,7 @@ object contactUs extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.
       {
 
 
-Seq[Any](_display_(/*1.2*/main("contactUs")/*1.19*/ {_display_(Seq[Any](format.raw/*1.21*/("""
+Seq[Any](format.raw/*1.1*/("""ush """),_display_(/*1.6*/main("contactUs")/*1.23*/ {_display_(Seq[Any](format.raw/*1.25*/("""
     
 """),format.raw/*3.1*/("""<div class="container-fluid">
        
@@ -91,11 +91,11 @@ Seq[Any](_display_(/*1.2*/main("contactUs")/*1.19*/ {_display_(Seq[Any](format.r
 
               /*
                   -- GENERATED --
-                  DATE: Mon Apr 23 09:33:18 IST 2018
-                  SOURCE: /home/wdd/webapps/ITPROJECT-master/app/views/contactUs.scala.html
-                  HASH: f7a0aeff364e08959744bf4f01d1a5614e8b2c35
-                  MATRIX: 1034->1|1059->18|1098->20|1132->28|3225->2092
-                  LINES: 33->1|33->1|33->1|35->3|77->45
+                  DATE: Mon Apr 23 10:58:45 IST 2018
+                  SOURCE: /home/wdd/webapps/FinalDay/app/views/contactUs.scala.html
+                  HASH: 5301b1b40571206f4b57d2d9934b8f02eb1032d8
+                  MATRIX: 1034->0|1064->5|1089->22|1128->24|1162->32|3255->2096
+                  LINES: 33->1|33->1|33->1|33->1|35->3|77->45
                   -- GENERATED --
               */
           

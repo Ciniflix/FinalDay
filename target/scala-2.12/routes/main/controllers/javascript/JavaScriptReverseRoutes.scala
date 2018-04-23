@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/wdd/webapps/ITPROJECT-master/conf/routes
-// @DATE:Mon Apr 23 10:11:35 IST 2018
+// @SOURCE:/home/wdd/webapps/FinalDay/conf/routes
+// @DATE:Mon Apr 23 11:01:48 IST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -60,6 +60,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:12
+    def products: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.products",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "products"})
+        }
+      """
+    )
+  
     // @LINE:10
     def Kids: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.Kids",
@@ -86,16 +96,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addproduct"})
-        }
-      """
-    )
-  
-    // @LINE:12
-    def Products: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.Products",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Products"})
         }
       """
     )
