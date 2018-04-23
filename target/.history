@@ -1,0 +1,20 @@
+run
+sbt
+exit
+run
+code .
+exit#
+exit
+run
+exit
+run
+exit
+run
+exit
+run
+exit
+run
+exit
+run
+compile
+run
