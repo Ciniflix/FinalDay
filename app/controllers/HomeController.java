@@ -70,7 +70,7 @@ public class HomeController extends Controller {
 
         return ok(products.render(productsList));
     }
-    public Result addproduct() {
+    public Result addProduct() {
 
         // Create a form by wrapping the Product class
         // in a FormFactory form instance
@@ -79,9 +79,10 @@ public class HomeController extends Controller {
         return ok(addProduct.render(productForm));
     }
    
-    public Result addproductSubmit() {
+    public Result addProductSubmit() {
     // Retrieve the submitted form object (bind from the HTTP request)
     Form<Product> newProductForm = formFactory.form(Product.class).bindFromRequest();
+    Product newProduct = new Product();
 
     // Check for errors (based on constraints set in the Product class)
         if (newProductForm.hasErrors()) {
@@ -90,7 +91,7 @@ public class HomeController extends Controller {
 
         } else {
             // No errors found - extract the Product details from the form
-            Product newProduct = newProductForm.get();
+            newProduct = newProductForm.get();
            // Save to the object to the Products table
             newProduct.save();
             // Set a success message in flash
@@ -112,59 +113,59 @@ public class HomeController extends Controller {
             // Redirect to the products page
             return redirect(controllers.routes.HomeController.products());
         }
-        public Result updateProduct(Long id) {
+       public Result updateProduct(Long id) {
         
-            Product p;
-            Form<Product> productForm;
-    
-            try {
-                // Find the product by id
-                p = Product.find.byId(id);
-    
-                // Fill the form object using the product, if found
-                productForm = formFactory.form(Product.class).fill(p);
-    
-            } catch (Exception ex) {
-                // Display an error message
-                return badRequest("error");
-            }
-    
-            // Render the updateProduct view - pass the form as parameter
-            return ok(addProduct.render(productForm));
+        Product p;
+        Form<Product> productForm;
+
+        try {
+            // Find the product by id
+            p = Product.find.byId(id);
+
+            // Fill the form object using the product, if found
+            productForm = formFactory.form(Product.class).fill(p);
+
+        } catch (Exception ex) {
+            // Display an error message
+            return badRequest("error");
         }
-    
-        public Result addProductSubmit() {
-    
-            // Retrieve the submitted form object (bind from the HTTP request)
-            Form<Product> newProductForm = formFactory.form(Product.class).bindFromRequest();
-    
-            // Check for errors (based on constraints set in the Product class)
-            if (newProductForm.hasErrors()) {
-                // Display the form again by returning a bad request
-                return badRequest(addProduct.render(newProductForm));
-    
-            } else {
-                // No errors found - extract the Product details from the form
-                Product newProduct = newProductForm.get();
-    
-                // A new, unsaved, product will not have an id
-                if (newProduct.getId() == null) {
-                    // Save to the object to the Products table
-                    newProduct.save();
-                }
-                else if (newProduct.getId() != null ) {
-                    // Product exists
-                    newProduct.update();
-                }
-    
-                // Set a success message in flash
-                // for display in return view
-                flash("success", "Product " + newProduct.getName() + " was added/ updated");
-    
-                // Redirect to the products page
-                return redirect(controllers.routes.HomeController.products());
+
+        // Render the updateProduct view - pass the form as parameter
+        return ok(addProduct.render(productForm));
+    }
+
+    public Result addproductSubmit() {
+
+        // Retrieve the submitted form object (bind from the HTTP request)
+        Form<Product> newProductForm = formFactory.form(Product.class).bindFromRequest();
+
+        // Check for errors (based on constraints set in the Product class)
+        if (newProductForm.hasErrors()) {
+            // Display the form again by returning a bad request
+            return badRequest(addProduct.render(newProductForm));
+
+        } else {
+            // No errors found - extract the Product details from the form
+            Product newProduct = newProductForm.get();
+
+            // A new, unsaved, product will not have an id
+            if (newProduct.getId() == null) {
+                // Save to the object to the Products table
+                newProduct.save();
             }
+            else if (newProduct.getId() != null ) {
+                // Product exists
+                newProduct.update();
+            }
+
+            // Set a success message in flash
+            // for display in return view
+            flash("success", "Product " + newProduct.getName() + " was added/ updated");
+
+            // Redirect to the products page
+            return redirect(controllers.routes.HomeController.products());
         }
+    }
     
 }
 

@@ -1,9 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/FinalDay/app/views/Mens.scala.html:3:7: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : views.html.products.type[0m
-[0m[[0m[31merror[0m] [0m[0m required: java.util.List[models.Product][0m
-[0m[[0m[31merror[0m] [0m[0m    @(products: List[models.Product])[0m
-[0m[[0m[31merror[0m] [0m[0m      ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/FinalDay/app/views/Mens.scala.html:39:27: value map is not a member of object views.html.products[0m
-[0m[[0m[31merror[0m] [0m[0m                @for(p <- products) {[0m
-[0m[[0m[31merror[0m] [0m[0m                          ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/FinalDay/app/controllers/HomeController.java:49:1: method render in class views.html.Mens cannot be applied to given types;[0m
+[0m[[0m[31merror[0m] [0m[0m  required: java.util.List<models.Product>[0m
+[0m[[0m[31merror[0m] [0m[0m  found: no arguments[0m
+[0m[[0m[31merror[0m] [0m[0m  reason: actual and formal argument lists differ in length[0m
+[0m[[0m[31merror[0m] [0m[0m        return ok(views.html.Mens.render());[0m

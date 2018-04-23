@@ -1,0 +1,51 @@
+@import models.users._
+
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+
+@* Param List *@ 
+@(message: String, user: User)
+
+@main("Home Page", user) {
+      <!-- this css class is not part of bootstrap but is defined in /css/style.css -->
+      <div>
+            <h2>Products catalogue with public and admin site</h2>
+            <h4>The default, public site</h4>
+            <ul>
+                  <li>Managed by HomeController</li>
+                  <li>Public visitors and customers see site with read only product catalogue</li>
+                  <li>Login option in navigation bar</li>
+            </ul>
+            <h4>Login and access control Process</h4>
+            <ul>
+                  <li>User class (models.users.User) defines a user</li>
+                  <li>The Administrator, Customer, and Manager user types all inherit from user</li>
+                  <li>Login checks if a user with matching email+password is in the DB</li>
+                  <li>If found, log in by storing email in a session cookie</li>
+                  <li>After login, replace login link with logout</li>
+                  <li>All controller methods pass a user object to the views<br> by calling getCurrentUser() which checks if a user is logged in </li>
+                  <li>All views accept user: User as a parameter and pass to main(user)</li>
+                  <li>Main uses an if statement to show login if no user (null) or else logout</li>
+            </ul>
+            <h4>Admin Site</h4>
+            <ul>
+                  <li>Managed by AdminController</li>
+                  <li>Admin views in views\productAdmin</li>
+                  <li>Admin product page allows add, edit, and delete products</li>
+                  <li>Secured using the Secured class<br>
+                        note: <b>@@Security.Authenticated(Secured.class)</b> at top of controller<br>
+                        CheckIfAdmin class <b>@@With(CheckIfAdmin.class)</b> verifies user role before granting access</li>
+            </ul>
+            <h4>Very Important!!</h4>
+            <ul>
+                  <li>Paramater list in controller action methods must match views</li>
+                  <li>The number of parameters, type, and order is importand, example:</li>
+                  <li>HomeController products(): <b>return ok(products.render(productList, categoryList, getCurrentUser()));</b></li>
+                  <li>products,scala.html: <b>@@(productList: List[Product], categoryList: List[Category], user: User)</b></li>
+                  <li>The view may not need user but <b>main()</b> will still require it!</li>
+            </ul>
+
+      </div>
+}
