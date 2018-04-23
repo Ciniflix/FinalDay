@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/webapps/FinalDay/conf/routes
-// @DATE:Mon Apr 23 12:15:04 IST 2018
+// @DATE:Mon Apr 23 14:25:33 IST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -20,22 +20,22 @@ package controllers.javascript {
     }
 
   
-    // @LINE:18
-    def addProductSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.addProductSubmit",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addproduct"})
-        }
-      """
-    )
-  
     // @LINE:9
     def contactUs: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.contactUs",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "contactUs"})
+        }
+      """
+    )
+  
+    // @LINE:18
+    def addproductSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addproductSubmit",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addproduct"})
         }
       """
     )
@@ -60,7 +60,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:20
+    // @LINE:21
     def deleteProduct: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deleteProduct",
       """
@@ -90,22 +90,32 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:22
+    def updateProduct: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.updateProduct",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "updateProduct/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:17
+    def addproduct: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addproduct",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addproduct"})
+        }
+      """
+    )
+  
     // @LINE:11
     def Womens: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.Womens",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Womens"})
-        }
-      """
-    )
-  
-    // @LINE:17
-    def addProduct: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.addProduct",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addproduct"})
         }
       """
     )

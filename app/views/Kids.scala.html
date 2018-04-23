@@ -35,11 +35,17 @@
                     <td>@product.getStock</td>
                     <td class="text-right">&euro;@("%.2f".format(product.getPrice))</td>
                     <td>
+                      <a href="@routes.HomeController.updateProduct(product.getId)" class="btn-xs btn-danger">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                      </a>
+                    </td>
+                    <td>
                       <a href="@routes.HomeController.deleteProduct(product.getId)" class="button-xs btn-danger" onclick="return confirmDel();">
                         <span class="glyphicon glyphicon-trash"></span>
                       </a>
                     </td>
                   </tr>
+
                 } @* End for loop*@
                 </tbody>
                 <tfoot>
@@ -50,7 +56,7 @@
               </table>
               <hr>
         <p>
-          <a href="@routes.HomeController.addProduct">
+          <a href="@routes.HomeController.addproduct">
             <button class="btn btn-primary">Add a Product</button>
           </a>
         </p>

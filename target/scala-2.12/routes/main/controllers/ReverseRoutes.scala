@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/webapps/FinalDay/conf/routes
-// @DATE:Mon Apr 23 12:15:04 IST 2018
+// @DATE:Mon Apr 23 14:25:33 IST 2018
 
 import play.api.mvc.Call
 
@@ -19,16 +19,16 @@ package controllers {
     }
 
   
-    // @LINE:18
-    def addProductSubmit(): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "addproduct")
-    }
-  
     // @LINE:9
     def contactUs(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "contactUs")
+    }
+  
+    // @LINE:18
+    def addproductSubmit(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "addproduct")
     }
   
     // @LINE:8
@@ -43,7 +43,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "AboutUs")
     }
   
-    // @LINE:20
+    // @LINE:21
     def deleteProduct(id:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "delProduct/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
@@ -61,16 +61,22 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "Kids")
     }
   
+    // @LINE:22
+    def updateProduct(id:Long): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "updateProduct/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
+    }
+  
+    // @LINE:17
+    def addproduct(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "addproduct")
+    }
+  
     // @LINE:11
     def Womens(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "Womens")
-    }
-  
-    // @LINE:17
-    def addProduct(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "addproduct")
     }
   
     // @LINE:6
