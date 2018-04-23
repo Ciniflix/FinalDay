@@ -56,18 +56,15 @@ Seq[Any](format.raw/*1.32*/("""
             </div>
               <ul class="nav navbar-nav navbar">
                 
-                <li><a href=""""),_display_(/*27.31*/routes/*27.37*/.HomeController.Mens()),format.raw/*27.59*/(""""><span class="glyphicon glyphicon-user"></span>Men's</a></li>
-                <li><a href=""""),_display_(/*28.31*/routes/*28.37*/.HomeController.Womens()),format.raw/*28.61*/(""""><span class="glyphicon glyphicon-user"></span>Women's</a></li>
-                 
-                <li><a href=""""),_display_(/*30.31*/routes/*30.37*/.HomeController.Kids()),format.raw/*30.59*/(""""><span class="glyphicon glyphicon-user"></span>Kids</a></li>
-                <li><a href=""""),_display_(/*31.31*/routes/*31.37*/.HomeController.products()),format.raw/*31.63*/(""""><span class="glyphicon glyphicon-user"></span>products</a></li>
+                
+                <li><a href=""""),_display_(/*28.31*/routes/*28.37*/.HomeController.products()),format.raw/*28.63*/(""""><span class="glyphicon glyphicon-user"></span>products</a></li>
                 
                </ul>
                <ul class="nav navbar-nav navbar-right">
               
-               <li><a href=""""),_display_(/*36.30*/routes/*36.36*/.HomeController.AboutUs()),format.raw/*36.61*/(""""><span class="glyphicon glyphicon-info-sign"></span>
+               <li><a href=""""),_display_(/*33.30*/routes/*33.36*/.HomeController.AboutUs()),format.raw/*33.61*/(""""><span class="glyphicon glyphicon-info-sign"></span>
                </span> About Us</a></li>
-                <li><a href=""""),_display_(/*38.31*/routes/*38.37*/.HomeController.contactUs()),format.raw/*38.64*/(""""><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+                <li><a href=""""),_display_(/*35.31*/routes/*35.37*/.HomeController.contactUs()),format.raw/*35.64*/(""""><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
                 </ul>
             </div>
           </div>
@@ -75,9 +72,9 @@ Seq[Any](format.raw/*1.32*/("""
         <footer class="container-fluid">
             <p></p>
         </footer>
-        """),_display_(/*46.10*/content),format.raw/*46.17*/("""
+        """),_display_(/*43.10*/content),format.raw/*43.17*/("""
         
-        """),format.raw/*48.9*/("""<script src=""""),_display_(/*48.23*/routes/*48.29*/.Assets.versioned("javascripts/main.js")),format.raw/*48.69*/("""" type="text/javascript"></script>
+        """),format.raw/*45.9*/("""<script src=""""),_display_(/*45.23*/routes/*45.29*/.Assets.versioned("javascripts/main.js")),format.raw/*45.69*/("""" type="text/javascript"></script>
    
 </html>
 
@@ -98,11 +95,11 @@ Seq[Any](format.raw/*1.32*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Apr 23 11:50:18 IST 2018
+                  DATE: Mon Apr 23 17:24:20 IST 2018
                   SOURCE: /home/wdd/webapps/FinalDay/app/views/main.scala.html
-                  HASH: 51796e667478f03531d3b40038582a876dba8e7d
-                  MATRIX: 952->1|1077->31|1105->33|1184->138|1219->147|1253->155|1278->160|1366->222|1380->228|1442->269|1524->325|1538->331|1601->373|1684->429|1699->435|1764->478|1852->539|1867->545|1928->584|2676->1305|2691->1311|2735->1334|2933->1505|2948->1511|2991->1533|3111->1626|3126->1632|3171->1656|3311->1769|3326->1775|3369->1797|3488->1889|3503->1895|3550->1921|3781->2125|3796->2131|3842->2156|3994->2281|4009->2287|4057->2314|4317->2547|4345->2554|4390->2572|4431->2586|4446->2592|4507->2632
-                  LINES: 28->1|33->1|35->3|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|55->23|55->23|55->23|59->27|59->27|59->27|60->28|60->28|60->28|62->30|62->30|62->30|63->31|63->31|63->31|68->36|68->36|68->36|70->38|70->38|70->38|78->46|78->46|80->48|80->48|80->48|80->48
+                  HASH: 71df57cde902801314ecf5d5ed2b1de0d4106307
+                  MATRIX: 952->1|1077->31|1105->33|1184->138|1219->147|1253->155|1278->160|1366->222|1380->228|1442->269|1524->325|1538->331|1601->373|1684->429|1699->435|1764->478|1852->539|1867->545|1928->584|2676->1305|2691->1311|2735->1334|2950->1522|2965->1528|3012->1554|3243->1758|3258->1764|3304->1789|3456->1914|3471->1920|3519->1947|3779->2180|3807->2187|3852->2205|3893->2219|3908->2225|3969->2265
+                  LINES: 28->1|33->1|35->3|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|55->23|55->23|55->23|60->28|60->28|60->28|65->33|65->33|65->33|67->35|67->35|67->35|75->43|75->43|77->45|77->45|77->45|77->45
                   -- GENERATED --
               */
           

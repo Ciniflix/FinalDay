@@ -25,3 +25,7 @@ run
 h2-browser
 run
 exit
+run
+code .
+exit
+run
