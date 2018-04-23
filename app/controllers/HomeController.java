@@ -1,15 +1,14 @@
 package controllers;
 
-
 import play.mvc.*;
 import play.data.*;
 import play.db.ebean.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-import javax.inject.Inject;;
+import javax.inject.Inject;
 
-// import models and views
-import models.*;
+// Import models and views
+import models.users.*;
 import models.products.*;
 import views.html.*;
 
@@ -18,146 +17,102 @@ import views.html.*;
  * to the application's home page.
  */
 public class HomeController extends Controller {
-     
-     
-   // Declare a private FormFactory instance
-   private FormFactory formFactory;
 
-   // Inject an instance of FormFactory into the controller via its constructor
-   @Inject
-   public HomeController(FormFactory f) {
-       this.formFactory = f;
-   }  
-    
-     public Result index() {
-        return ok(views.html.index.render());
+    /** Dependency Injection **/
+
+    /** http://stackoverflow.com/questions/15600186/play-framework-dependency-injection **/
+    private FormFactory formFactory;
+
+    /** http://stackoverflow.com/a/10159220/6322856 **/
+    @Inject
+    public HomeController(FormFactory f) {
+        this.formFactory = f;
     }
 
-    public Result AboutUs() {
-        return ok(views.html.AboutUs.render());
+    // Get a user - if logged in email will be set in the session
+	private User getCurrentUser() {
+		User u = User.getLoggedIn(session().get("email"));
+		return u;
+	}
+
+    /**
+     * An action that renders an HTML page with a welcome message.
+     * The configuration in the <code>routes</code> file means that
+     * this method will be called when the application receives a
+     * <code>GET</code> request with a path of <code>/</code>.
+     */
+    public Result index() {
+        return ok(index.render("Hello World!", getCurrentUser()));
     }
 
-    public Result Mens() {
-        return ok(views.html.Mens.render());
+    public Result about() {
+        return ok(about.render(getCurrentUser()));
     }
 
-    public Result contactUs() {
-        return ok(views.html.contactUs.render());
-    }
+    @Transactional
+    public Result products(Long cat) {
 
-    public Result Kids() {
+        // Find the products (in the DB) and add to a Product arrayList
+        // Calls the find.all() method of Product - from the Model superclass
+        // https://www.playframework.com/documentation/2.6.x/JavaEbean#Using-Model-superclass
+        List<Product> productList = new ArrayList<Product>();
+        List<Category> categoryList = Category.find.query().where().orderBy("name asc").findList();
 
-        List<Product> productsList = Product.find.all();
+        if (cat == 0) {
+            productList = Product.find.all();
+        }
+        else {
+            // Get products for selected category
+            // Find category then extract products
+            productList = Category.find.ref(cat).getProducts();
+        }
 
         // Return the view, passing the product list as a parameter
-        return ok(views.html.Kids.render(productsList));
+        return ok(products.render(productList, categoryList, getCurrentUser()));
     }
 
-    public Result Womens() {
-        return ok(views.html.Womens.render());
+    @Transactional
+    public Result login() {
+	   // Pass a login form to the login view and render
+	   return ok(login.render(formFactory.form(Login.class), getCurrentUser()));
     }
-    public Result products() {
 
-        List<Product> productsList = Product.find.all();
+    // Process the user login form
+    //@Transactional
+    public Result loginSubmit() {
+        // Bind form instance to the values submitted from the form  
+        Form<Login> loginForm = formFactory.form(Login.class).bindFromRequest();
 
-        return ok(products.render(productsList));
-    }
-    public Result addProduct() {
-
-        // Create a form by wrapping the Product class
-        // in a FormFactory form instance
-        Form<Product> productForm = formFactory.form(Product.class);
-        
-        return ok(addProduct.render(productForm));
-    }
-   
-    public Result addProductSubmit() {
-    // Retrieve the submitted form object (bind from the HTTP request)
-    Form<Product> newProductForm = formFactory.form(Product.class).bindFromRequest();
-    Product newProduct = new Product();
-
-    // Check for errors (based on constraints set in the Product class)
-        if (newProductForm.hasErrors()) {
-            // Display the form again by returning a bad request
-            return badRequest(addProduct.render(newProductForm));
-
-        } else {
-            // No errors found - extract the Product details from the form
-            newProduct = newProductForm.get();
-           // Save to the object to the Products table
-            newProduct.save();
-            // Set a success message in flash
-            // for display in return view
-            flash("success", "Product " + newProduct.getName() + " was added");
-            // Redirect to the products page
-        return redirect(controllers.routes.HomeController.products());
-        }
-    }
-        public Result deleteProduct(Long id) {
-        
-            // find product by id and call delete method
-            Product.find.ref(id).delete();
-    
-            // Set a success message in flash
-            // for display in return view
-            flash("success", "Product deleted successfully");
+        // Check for errors
+        // Uses the validate method defined in the Login class
+        if (loginForm.hasErrors()) {
+            // If errors, show the form again
+            return badRequest(login.render(loginForm, getCurrentUser()));
+        } 
+        else {
+            // User Logged in successfully
+            // Clear the existing session
+            session().clear();
+            // Store the logged in email in the session
+            session("email", loginForm.get().getEmail());
             
-            // Redirect to the products page
-            return redirect(controllers.routes.HomeController.products());
+            // Check user type
+            User u = User.getLoggedIn(loginForm.get().getEmail());
+            // If admin - go to admin section
+            if (u != null && "admin".equals(u.getRole())) {
+                return redirect(controllers.routes.AdminController.index());
+            }
+            
+            // Return to home page
+            return redirect(controllers.routes.HomeController.index());
         }
-       public Result updateProduct(Long id) {
-        
-        Product p;
-        Form<Product> productForm;
-
-        try {
-            // Find the product by id
-            p = Product.find.byId(id);
-
-            // Fill the form object using the product, if found
-            productForm = formFactory.form(Product.class).fill(p);
-
-        } catch (Exception ex) {
-            // Display an error message
-            return badRequest("error");
-        }
-
-        // Render the updateProduct view - pass the form as parameter
-        return ok(addProduct.render(productForm));
     }
 
-    public Result addproductSubmit() {
-
-        // Retrieve the submitted form object (bind from the HTTP request)
-        Form<Product> newProductForm = formFactory.form(Product.class).bindFromRequest();
-
-        // Check for errors (based on constraints set in the Product class)
-        if (newProductForm.hasErrors()) {
-            // Display the form again by returning a bad request
-            return badRequest(addProduct.render(newProductForm));
-
-        } else {
-            // No errors found - extract the Product details from the form
-            Product newProduct = newProductForm.get();
-
-            // A new, unsaved, product will not have an id
-            if (newProduct.getId() == null) {
-                // Save to the object to the Products table
-                newProduct.save();
-            }
-            else if (newProduct.getId() != null ) {
-                // Product exists
-                newProduct.update();
-            }
-
-            // Set a success message in flash
-            // for display in return view
-            flash("success", "Product " + newProduct.getName() + " was added/ updated");
-
-            // Redirect to the products page
-            return redirect(controllers.routes.HomeController.products());
-        }
+    @Transactional
+    public Result logout() {
+        session().clear();
+        flash("success", "You've been logged out");
+        return redirect(routes.HomeController.login());
     }
-    
+
 }
-
