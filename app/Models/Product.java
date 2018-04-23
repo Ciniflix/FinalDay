@@ -2,9 +2,8 @@ package models;
 
 import java.util.*;
 import javax.persistence.*;
+
 import io.ebean.*;
-
-
 import play.data.format.*;
 import play.data.validation.*;
 
@@ -35,27 +34,29 @@ private double price;
 public Product() {
 
 }
+ // Constructor to initialise object
+
+public Product(Long id, String category, String name, String description, int stock, double price) {
+
+    this.id = id;
+    
+    this.name = name;
+    
+    this.category = category;
+    
+    this.description = description;
+    
+    this.stock = stock;
+    
+    this.price = price;
+    
+    }
+    
 
     //Generic query helper for entity Product with id type Long
     public static Finder<Long,Product> find = new Finder<>(Product.class);
 
-// Constructor to initialise object
 
-public Product(Long id, String category, String name, String description, int stock, double price) {
-
-this.id = id;
-
-this.name = name;
-
-this.category = category;
-
-this.description = description;
-
-this.stock = stock;
-
-this.price = price;
-
-}
 
 
     // Accessor methods

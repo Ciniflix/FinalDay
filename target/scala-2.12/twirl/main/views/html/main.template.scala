@@ -52,7 +52,7 @@ Seq[Any](format.raw/*1.32*/("""
         <nav class="navbar .navbar-inverse navbar-fixed-top">
                  <div class="container-fluid ">
                    <div class="navbar-header">
-           <a class="navbar-brand" href=""""),_display_(/*23.43*/routes/*23.49*/.HomeController.index()),format.raw/*23.72*/(""""><span class="glyphicon glyphicon-fire"></span>Real Retail Reviews</a>
+           <a class="navbar-brand" href=""""),_display_(/*23.43*/routes/*23.49*/.HomeController.index()),format.raw/*23.72*/(""""><span class="glyphicon glyphicon-fire"></span>RRR</a>
             </div>
               <ul class="nav navbar-nav navbar">
                 
@@ -60,7 +60,7 @@ Seq[Any](format.raw/*1.32*/("""
                 <li><a href=""""),_display_(/*28.31*/routes/*28.37*/.HomeController.Womens()),format.raw/*28.61*/(""""><span class="glyphicon glyphicon-user"></span>Women's</a></li>
                  
                 <li><a href=""""),_display_(/*30.31*/routes/*30.37*/.HomeController.Kids()),format.raw/*30.59*/(""""><span class="glyphicon glyphicon-user"></span>Kids</a></li>
-                <li><a href=""""),_display_(/*31.31*/routes/*31.37*/.HomeController.products()),format.raw/*31.63*/(""""><span class="glyphicon glyphicon-user"></span></a></li>
+                <li><a href=""""),_display_(/*31.31*/routes/*31.37*/.HomeController.products()),format.raw/*31.63*/(""""><span class="glyphicon glyphicon-user"></span>products</a></li>
                 
                </ul>
                <ul class="nav navbar-nav navbar-right">
@@ -72,9 +72,13 @@ Seq[Any](format.raw/*1.32*/("""
             </div>
           </div>
         </nav>
-        """),_display_(/*43.10*/content),format.raw/*43.17*/("""
-        """),format.raw/*44.9*/("""<script src=""""),_display_(/*44.23*/routes/*44.29*/.Assets.versioned("javascripts/main.js")),format.raw/*44.69*/("""" type="text/javascript"></script>
-    </body>
+        <footer class="container-fluid">
+            <p></p>
+        </footer>
+        """),_display_(/*46.10*/content),format.raw/*46.17*/("""
+        
+        """),format.raw/*48.9*/("""<script src=""""),_display_(/*48.23*/routes/*48.29*/.Assets.versioned("javascripts/main.js")),format.raw/*48.69*/("""" type="text/javascript"></script>
+   
 </html>
 
 
@@ -94,11 +98,11 @@ Seq[Any](format.raw/*1.32*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Apr 23 11:06:51 IST 2018
+                  DATE: Mon Apr 23 11:50:18 IST 2018
                   SOURCE: /home/wdd/webapps/FinalDay/app/views/main.scala.html
-                  HASH: 4e5b864ffdd64883213132ae93be289986a43e7c
-                  MATRIX: 952->1|1077->31|1105->33|1184->138|1219->147|1253->155|1278->160|1366->222|1380->228|1442->269|1524->325|1538->331|1601->373|1684->429|1699->435|1764->478|1852->539|1867->545|1928->584|2676->1305|2691->1311|2735->1334|2949->1521|2964->1527|3007->1549|3127->1642|3142->1648|3187->1672|3327->1785|3342->1791|3385->1813|3504->1905|3519->1911|3566->1937|3789->2133|3804->2139|3850->2164|4002->2289|4017->2295|4065->2322|4246->2476|4274->2483|4310->2492|4351->2506|4366->2512|4427->2552
-                  LINES: 28->1|33->1|35->3|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|55->23|55->23|55->23|59->27|59->27|59->27|60->28|60->28|60->28|62->30|62->30|62->30|63->31|63->31|63->31|68->36|68->36|68->36|70->38|70->38|70->38|75->43|75->43|76->44|76->44|76->44|76->44
+                  HASH: 51796e667478f03531d3b40038582a876dba8e7d
+                  MATRIX: 952->1|1077->31|1105->33|1184->138|1219->147|1253->155|1278->160|1366->222|1380->228|1442->269|1524->325|1538->331|1601->373|1684->429|1699->435|1764->478|1852->539|1867->545|1928->584|2676->1305|2691->1311|2735->1334|2933->1505|2948->1511|2991->1533|3111->1626|3126->1632|3171->1656|3311->1769|3326->1775|3369->1797|3488->1889|3503->1895|3550->1921|3781->2125|3796->2131|3842->2156|3994->2281|4009->2287|4057->2314|4317->2547|4345->2554|4390->2572|4431->2586|4446->2592|4507->2632
+                  LINES: 28->1|33->1|35->3|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|55->23|55->23|55->23|59->27|59->27|59->27|60->28|60->28|60->28|62->30|62->30|62->30|63->31|63->31|63->31|68->36|68->36|68->36|70->38|70->38|70->38|78->46|78->46|80->48|80->48|80->48|80->48
                   -- GENERATED --
               */
           

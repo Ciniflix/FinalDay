@@ -78,12 +78,12 @@ public class HomeController extends Controller {
         
         return ok(addProduct.render(productForm));
     }
+   
     public Result addProductSubmit() {
+    // Retrieve the submitted form object (bind from the HTTP request)
+    Form<Product> newProductForm = formFactory.form(Product.class).bindFromRequest();
 
-        // Retrieve the submitted form object (bind from the HTTP request)
-        Form<Product> newProductForm = formFactory.form(Product.class).bindFromRequest();
-
-        // Check for errors (based on constraints set in the Product class)
+    // Check for errors (based on constraints set in the Product class)
         if (newProductForm.hasErrors()) {
             // Display the form again by returning a bad request
             return badRequest(addProduct.render(newProductForm));
@@ -91,17 +91,28 @@ public class HomeController extends Controller {
         } else {
             // No errors found - extract the Product details from the form
             Product newProduct = newProductForm.get();
-
-            // Save to the object to the Products table
+           // Save to the object to the Products table
             newProduct.save();
-
             // Set a success message in flash
             // for display in return view
             flash("success", "Product " + newProduct.getName() + " was added");
-
             // Redirect to the products page
-            return redirect(controllers.routes.HomeController.index());
+        return redirect(controllers.routes.HomeController.products());
         }
     }
+        public Result deleteProduct(Long id) {
+        
+            // find product by id and call delete method
+            Product.find.ref(id).delete();
+    
+            // Set a success message in flash
+            // for display in return view
+            flash("success", "Product deleted successfully");
+            
+            // Redirect to the products page
+            return redirect(controllers.routes.HomeController.products());
+        }
+      
+    
 }
 

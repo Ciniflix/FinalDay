@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/webapps/FinalDay/conf/routes
-// @DATE:Mon Apr 23 11:01:48 IST 2018
+// @DATE:Mon Apr 23 12:15:04 IST 2018
 
 package controllers;
 
