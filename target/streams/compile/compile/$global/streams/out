@@ -1,4 +1,9 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/FinalDay/app/views/products.scala.html:51:43: value addProduct is not a member of controllers.ReverseHomeController[0m
-[0m[[0m[31merror[0m] [0m[0m          <a href="@routes.HomeController.addProduct">[0m
-[0m[[0m[31merror[0m] [0m[0m                                          ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/FinalDay/app/views/Mens.scala.html:3:7: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : views.html.products.type[0m
+[0m[[0m[31merror[0m] [0m[0m required: java.util.List[models.Product][0m
+[0m[[0m[31merror[0m] [0m[0m    @(products: List[models.Product])[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/FinalDay/app/views/Mens.scala.html:39:27: value map is not a member of object views.html.products[0m
+[0m[[0m[31merror[0m] [0m[0m                @for(p <- products) {[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
